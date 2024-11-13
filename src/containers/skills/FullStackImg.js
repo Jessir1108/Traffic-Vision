@@ -8,7 +8,7 @@ export default class FullStackImg extends Component {
       <img
         src={licensePlate}
         alt="Data Science"
-        style={{ width: "300%", height: "auto", fill: theme.text }}
+        style={{ width: "80%", height: "auto", fill: theme.text }}
       />
     );
   }

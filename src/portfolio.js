@@ -38,7 +38,7 @@ const socialMediaLinks = [
 
   {
     name: "Github",
-    link: "https://github.com/ashutosh1919",
+    link: "https://github.com/Jessir1108/Traffic-Vision",
     fontAwesomeIcon: "fa-github", // Reference https://fontawesome.com/icons/github?style=brands
     backgroundColor: "#181717", // Reference https://simpleicons.org/?q=github
   },
@@ -121,60 +121,15 @@ const skills = {
       title: "Speed Estimation",
       fileName: "CloudInfraImg",
       skills: [
-        "⚡ Experience working on multiple cloud platforms",
+        "⚡ sa",
         "⚡ Hosting and maintaining websites on virtual machine instances along with integration of databases",
         "⚡ Deploying deep learning models on cloud to use on mobile devices",
         "⚡ Setting up streaming jobs from DB to Server or vice-versa on GCP and AWS",
       ],
       softwareSkills: [
         {
-          skillName: "GCP",
-          fontAwesomeClassname: "simple-icons:googlecloud",
-          style: {
-            color: "#4285F4",
-          },
-        },
-        {
-          skillName: "Azure",
-          fontAwesomeClassname: "simple-icons:microsoftazure",
-          style: {
-            color: "#0089D6",
-          },
-        },
-        {
-          skillName: "Firebase",
-          fontAwesomeClassname: "simple-icons:firebase",
-          style: {
-            color: "#FFCA28",
-          },
-        },
-        {
-          skillName: "PostgreSQL",
-          fontAwesomeClassname: "simple-icons:postgresql",
-          style: {
-            color: "#336791",
-          },
-        },
-        {
-          skillName: "MongoDB",
-          fontAwesomeClassname: "simple-icons:mongodb",
-          style: {
-            color: "#47A248",
-          },
-        },
-        {
-          skillName: "Docker",
-          fontAwesomeClassname: "simple-icons:docker",
-          style: {
-            color: "#1488C6",
-          },
-        },
-        {
-          skillName: "Kubernetes",
-          fontAwesomeClassname: "simple-icons:kubernetes",
-          style: {
-            color: "#326CE5",
-          },
+          skillName: "GPS",
+          imageSrc: "gps.png",
         },
       ],
     },
@@ -182,38 +137,14 @@ const skills = {
       title: "Lane Detection",
       fileName: "DesignImg",
       skills: [
-        "⚡ Designing highly attractive user interface for mobile and web applications",
-        "⚡ Customizing logo designs and building logos from scratch",
-        "⚡ Creating the flow of application functionalities to optimize user experience",
+        "⚡ Implementation of perspective transformation to obtain a bird's eye view, facilitating lane line detection and tracking through advanced computer vision techniques",
+        "⚡Comprehensive image pre-processing, including HSV adjustments, grayscale conversion, Gaussian blur, edge detection with Canny, and region of interest (ROI) masking. These techniques, along with color filtering, binarization, and thresholding, enhance lane detection accuracy and allow the system to adapt to varying lighting conditions in the video.",
+        "⚡  Validation of the lane detection system in environments subject to slight camera movements, ensuring robust identification of left and right lanes, even under minor variations caused by weather or mechanical conditions.",
       ],
       softwareSkills: [
         {
-          skillName: "Adobe XD",
-          fontAwesomeClassname: "simple-icons:adobexd",
-          style: {
-            color: "#FF2BC2",
-          },
-        },
-        {
-          skillName: "Figma",
-          fontAwesomeClassname: "simple-icons:figma",
-          style: {
-            color: "#F24E1E",
-          },
-        },
-        {
-          skillName: "Adobe Illustrator",
-          fontAwesomeClassname: "simple-icons:adobeillustrator",
-          style: {
-            color: "#FF7C00",
-          },
-        },
-        {
-          skillName: "Inkscape",
-          fontAwesomeClassname: "simple-icons:inkscape",
-          style: {
-            color: "#000000",
-          },
+          skillName: "Bird's Eye View",
+          imageSrc: "birdeye.png",
         },
       ],
     },

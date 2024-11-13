@@ -8,7 +8,7 @@ export default class DataScienceImg extends Component {
       <img
         src={DataScienceSVG}
         alt="Data Science"
-        style={{ width: "300%", height: "auto", fill: theme.text }}
+        style={{ width: "100%", height: "auto", fill: theme.text }}
       />
     );
   }

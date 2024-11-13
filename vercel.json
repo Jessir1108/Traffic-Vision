@@ -1,10 +1,5 @@
 {
   "version": 2,
-  "scripts": {
-    "build": "npm install --legacy-peer-deps && npm run build --if-present",
-    "dev": "npm run dev",
-    "start": "npm start"
-  },
   "builds": [
     {
       "src": "package.json",

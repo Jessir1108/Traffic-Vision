@@ -28,6 +28,9 @@ jobs:
     - run: |
         npm install --legacy-peer-deps
         npm run build --if-present
+      env:
+        SKIP_PREFLIGHT_CHECK: true
     - run: npm test
       env:
         CI: true
+        SKIP_PREFLIGHT_CHECK: true

@@ -1,22 +1,14 @@
 .video-card {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: 100%;
   margin: 20px 0;
-  padding: 10px;
   border: 1px solid #ccc;
   border-radius: 8px;
   background-color: #f9f9f9;
+  overflow: hidden;
 }
 
 .video-content {
   width: 100%;
-  max-width: 600px;
   border-radius: 8px;
-}
-
-.video-description {
-  margin-top: 10px;
-  font-size: 1.2em;
-  text-align: center;
 }

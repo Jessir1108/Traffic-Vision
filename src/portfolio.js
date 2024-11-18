@@ -23,7 +23,7 @@ const greeting = {
   logo_name: "Traffic Vision",
   nickname: "Jessir F. - Javier M.",
   subTitle:
-    "Welcome to the high-performance driver detection system with Computer Vision.",
+    "Welcome to the advanced traffic monitoring system, combining Computer Vision and real-time analytics for efficient lane, speed, and license plate detection.",
 };
 
 const socialMediaLinks = [
@@ -42,18 +42,18 @@ const socialMediaLinks = [
     fontAwesomeIcon: "fa-github", // Reference https://fontawesome.com/icons/github?style=brands
     backgroundColor: "#181717", // Reference https://simpleicons.org/?q=github
   },
-  {
-    name: "LinkedIn",
-    link: "https://www.linkedin.com/in/ashutosh1919/",
-    fontAwesomeIcon: "fa-linkedin-in", // Reference https://fontawesome.com/icons/linkedin-in?style=brands
-    backgroundColor: "#0077B5", // Reference https://simpleicons.org/?q=linkedin
-  },
-  {
-    name: "YouTube",
-    link: "https://youtube.com/c/DevSense19",
-    fontAwesomeIcon: "fa-youtube", // Reference https://fontawesome.com/icons/youtube?style=brands
-    backgroundColor: "#FF0000", // Reference https://simpleicons.org/?q=youtube
-  },
+  // {
+  //   name: "LinkedIn",
+  //   link: "https://www.linkedin.com/in/ashutosh1919/",
+  //   fontAwesomeIcon: "fa-linkedin-in", // Reference https://fontawesome.com/icons/linkedin-in?style=brands
+  //   backgroundColor: "#0077B5", // Reference https://simpleicons.org/?q=linkedin
+  // },
+  // {
+  //   name: "YouTube",
+  //   link: "https://youtube.com/c/DevSense19",
+  //   fontAwesomeIcon: "fa-youtube", // Reference https://fontawesome.com/icons/youtube?style=brands
+  //   backgroundColor: "#FF0000", // Reference https://simpleicons.org/?q=youtube
+  // },
   {
     name: "Gmail",
     link: "mailto:pfjessiryjavier@gmail.com",
@@ -121,10 +121,9 @@ const skills = {
       title: "Speed Estimation",
       fileName: "CloudInfraImg",
       skills: [
-        "⚡ sa",
-        "⚡ Hosting and maintaining websites on virtual machine instances along with integration of databases",
-        "⚡ Deploying deep learning models on cloud to use on mobile devices",
-        "⚡ Setting up streaming jobs from DB to Server or vice-versa on GCP and AWS",
+        "⚡ Leveraging YOLO models to detect vehicles and license plates in video frames, enabling accurate tracking for speed estimation.",
+        "⚡ Implementing SORT tracking algorithms to maintain vehicle identities across frames, ensuring consistency in positional data.",
+        "⚡ Utilizing plate dimensions and their relative position in the frame to calculate vehicle speeds dynamically, achieving real-time performance in diverse traffic scenarios.",
       ],
       softwareSkills: [
         {
@@ -138,8 +137,8 @@ const skills = {
       fileName: "DesignImg",
       skills: [
         "⚡ Implementation of perspective transformation to obtain a bird's eye view, facilitating lane line detection and tracking through advanced computer vision techniques",
-        "⚡Comprehensive image pre-processing, including HSV adjustments, grayscale conversion, Gaussian blur, edge detection with Canny, and region of interest (ROI) masking. These techniques, along with color filtering, binarization, and thresholding, enhance lane detection accuracy and allow the system to adapt to varying lighting conditions in the video.",
-        "⚡  Validation of the lane detection system in environments subject to slight camera movements, ensuring robust identification of left and right lanes, even under minor variations caused by weather or mechanical conditions.",
+        "⚡ Comprehensive image pre-processing, including HSV adjustments, grayscale conversion, Gaussian blur, edge detection with Canny, and region of interest (ROI) masking. These techniques, along with color filtering, binarization, and thresholding, enhance lane detection accuracy and allow the system to adapt to varying lighting conditions in the video.",
+        "⚡ Validation of the lane detection system in environments subject to slight camera movements, ensuring robust identification of left and right lanes, even under minor variations caused by weather or mechanical conditions.",
       ],
       softwareSkills: [
         {
@@ -208,30 +207,52 @@ const competitiveSites = {
 const degrees = {
   degrees: [
     {
-      title: "Indian Institute of Information Technology Kurnool",
-      subtitle: "B.Tech. in Computer Engineering",
+      title: "Plate detection",
       logo_path: "iiitk_logo.png",
       alt_name: "IIITDM Kurnool",
-      duration: "2016 - 2020",
       descriptions: [
-        "⚡ I have studied basic software engineering subjects like DS, Algorithms, DBMS, OS, CA, AI etc.",
-        "⚡ Apart from this, I have done courses on Deep Learning, Data Science, Cloud Computing and Full Stack Development.",
-        "⚡ I was selected for Merit cum Means Scholarship which is given to top 10% of students in college. I have received award from respected director for consistently best performance in academics.",
+        "⚡ In the developed system, the detection of vehicle license plates was carried out using a pre-trained YOLOv5 model specifically designed for license plate identification. This model accurately locates regions of interest in the images captured by cameras installed on the road. Based on the coordinates provided by YOLOv5, the specific areas corresponding to the plates are extracted, facilitating further analysis.",
+        "⚡ Once the plate region is identified, image processing techniques, such as adjustments to contrast, brightness, and sharpness, are applied to optimize detection quality. These enhancements ensure that the alphanumeric characters on the plates can be read more accurately.",
+        "⚡ Character recognition was performed using tools like EasyOCR, which converted the processed images into alphanumeric text. This text was validated against a standard pattern to ensure compliance with the format of vehicle license plates. Additionally, the model was evaluated and fine-tuned using a ground truth dataset, allowing for accurate measurement of its precision and robustness under real-world conditions.",
+        "⚡ This comprehensive approach ensures efficient and reliable performance in the detection and analysis of vehicle license plates, meeting the system's technical requirements.",
+        {
+          type: "image",
+          src: "car_plate.png",
+          alt: "Car plate",
+        },
       ],
-      website_link: "http://iiitk.ac.in",
+      website_link: "https://github.com/JaidedAI/EasyOCR",
     },
     {
-      title: "Indiana University Bloomington",
-      subtitle: "M.S. in Computer Science",
+      title: "Speed Estimation",
       logo_path: "iu_logo.png",
       alt_name: "Indiana University Bloomington",
-      duration: "2021 - 2023",
       descriptions: [
-        "⚡ I have taken varity of courses related to Artificial Intelligence which correspond to Explainable AI, Graph Machine Learning, Computer Vision etc.",
-        "⚡ Apart from this, I have also done research assistantship. As part of it, I have worked on creating new algorithms in Graph ML and Network Science.",
-        "⚡ During my time at university, I was also associated with multimedia department. As part of it, I have worked on some documentry films and interviews.",
+        "⚡ The vehicle speed estimation system integrates advanced computer vision techniques and mathematical modeling to determine vehicle speeds based on video analysis. The process begins with the detection of vehicles and license plates using pre-trained YOLO models. Vehicles are identified using yolov8n.pt, while license plates are detected using a dedicated license plate detector model.",
+        "⚡ Once the vehicles and plates are detected, their positions and dimensions are tracked using the SORT (Simple Online and Realtime Tracking) algorithm. This ensures accurate tracking of individual vehicles across video frames, even in complex traffic scenarios. The dimensions of the license plate in pixels, combined with its vertical position in the frame, are used to estimate the distance from the camera using a pre-calculated distance vector.",
+        "⚡ The system calculates the vehicle's speed by measuring the apparent size of the license plate in subsequent frames, leveraging the relationship between the plate's size, its distance to the camera, and the frame rate of the video. This estimation, performed in real-time, is converted into kilometers per hour (km/h). The average speed of each vehicle is then displayed on the video frame alongside bounding boxes that indicate their position, providing a clear visualization of the traffic data.",
+        "⚡ This method ensures precise and efficient speed estimation, which is crucial for applications in traffic monitoring and enforcement. The system's ability to process data dynamically allows it to adapt to varying conditions, making it robust and reliable for real-world scenarios.",
+        {
+          type: "image",
+          src: "speed_estimation.jpg",
+          alt: "Speed estimation",
+        },
       ],
-      website_link: "https://www.indiana.edu/",
+    },
+    {
+      title: "Lane detection",
+      logo_path: "image.png",
+      alt_name: "Indiana University Bloomington",
+      descriptions: [
+        "⚡ The lane detection and tracking system leverages advanced computer vision techniques to ensure precise and robust identification of road lanes. A central component of the system is the implementation of a perspective transformation, which converts the standard camera view into a bird's eye view. This transformation simplifies the geometric representation of the road, making lane boundaries more discernible and facilitating accurate lane tracking even in dynamic traffic conditions.",
+        "⚡ The system also integrates a comprehensive pipeline of image pre-processing steps, including HSV filtering for color segmentation, grayscale conversion, Gaussian blur to minimize noise, and Canny edge detection to highlight lane boundaries. Additionally, region-of-interest (ROI) masking ensures that only the relevant road segments are analyzed, improving efficiency and accuracy. These techniques, combined with histogram-based lane line initialization and sliding window methods, allow the system to detect and track left, middle, and right lanes with high precision.",
+        "⚡ To ensure adaptability to real-world challenges, the system was validated in scenarios where slight camera movements occurred due to environmental factors or mechanical vibrations. Even under these conditions, the lane detection algorithm maintained robust performance, accurately identifying lanes and dynamically adapting to variations in road curvature and lighting. This approach ensures a reliable and efficient solution for lane detection in real-world driving environments.",
+        {
+          type: "image",
+          src: "lane_detection.png",
+          alt: "Lane detection",
+        },
+      ],
     },
   ],
 };

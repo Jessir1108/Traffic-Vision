@@ -47,12 +47,32 @@ class DegreeCard extends Component {
               </div>
             </div>
             <div className="body-content">
-              {degree.descriptions.map((sentence) => {
-                return (
-                  <p className="content-list" style={{ color: theme.text }}>
-                    {sentence}
-                  </p>
-                );
+              {degree.descriptions.map((desc, index) => {
+                if (typeof desc === "string") {
+                  return (
+                    <p
+                      key={index}
+                      className="content-list"
+                      style={{ color: theme.text }}
+                    >
+                      {desc}
+                    </p>
+                  );
+                } else if (desc.type === "image") {
+                  return (
+                    <img
+                      key={index}
+                      src={require(`../../assets/images/${desc.src}`)}
+                      alt={desc.alt}
+                      style={{
+                        maxWidth: "100%",
+                        marginTop: "10px",
+                        borderRadius: "10px",
+                      }}
+                    />
+                  );
+                }
+                return null;
               })}
               {degree.website_link && (
                 <a

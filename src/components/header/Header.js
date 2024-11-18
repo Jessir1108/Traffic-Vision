@@ -38,18 +38,6 @@ class Header extends Component {
             <ul className="menu" style={{ backgroundColor: theme.body }}>
               <li>
                 <NavLink
-                  to="/home"
-                  tag={Link}
-                  activeStyle={{ fontWeight: "bold" }}
-                  style={{ color: theme.text }}
-                  onMouseEnter={(event) => onMouseEnter(event, theme.highlight)}
-                  onMouseOut={(event) => onMouseOut(event)}
-                >
-                  Home
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
                   to="/live_detection"
                   tag={Link}
                   activeStyle={{ fontWeight: "bold" }}
@@ -58,6 +46,18 @@ class Header extends Component {
                   onMouseOut={(event) => onMouseOut(event)}
                 >
                   Live detection
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/home"
+                  tag={Link}
+                  activeStyle={{ fontWeight: "bold" }}
+                  style={{ color: theme.text }}
+                  onMouseEnter={(event) => onMouseEnter(event, theme.highlight)}
+                  onMouseOut={(event) => onMouseOut(event)}
+                >
+                  Home
                 </NavLink>
               </li>
               {/* <li>

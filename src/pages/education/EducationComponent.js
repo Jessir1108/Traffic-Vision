@@ -3,45 +3,55 @@ import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import TopButton from "../../components/topButton/TopButton";
 import Educations from "../../containers/education/Educations";
-import Certifications from "../../containers/certifications/Certifications";
-import CompetitiveSites from "../../components/competitiveSites/CompetitiveSites";
-import EducationImg from "./EducationImg";
-import { competitiveSites } from "../../portfolio";
-import { certifications } from "../../portfolio";
+import CustomTable from "../../components/customTable/customTable";
+import VideoCard from "../../components/videoCard/VideoCard";
 import "./EducationComponent.css";
 import { Fade } from "react-reveal";
 
 class Education extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      detections: [
+        { plate: "ABC123", infractions: 10 },
+        { plate: "XYZ789", infractions: 8 },
+        { plate: "LMN456", infractions: 7 },
+        { plate: "DEF321", infractions: 5 },
+        { plate: "GHI654", infractions: 3 },
+        { plate: "JKL987", infractions: 2 },
+        { plate: "MNO654", infractions: 1 },
+      ],
+    };
+  }
+
   render() {
-    const theme = this.props.theme;
+    const { theme } = this.props;
+    const { detections } = this.state;
+
     return (
-      <div className="education-main">
+      <div className="education-main" style={{ backgroundColor: "#edf9fe" }}>
         <Header theme={this.props.theme} />
         <div className="basic-education">
           <Fade bottom duration={2000} distance="40px">
             <div className="heading-div">
-              <div className="heading-img-div">
-                {/* <img
-									src={require("../../assets/images/education.svg")}
-									alt=""
-								/> */}
-                <EducationImg theme={theme} />
-              </div>
-              <div className="heading-text-div">
-                <h1 className="heading-text" style={{ color: theme.text }}>
-                  Education
+              <div className="heading-video-div">
+                <h1 className="heading-text" style={{ color: "#001c55" }}>
+                  Latest Detection
                 </h1>
-                <h3 className="heading-sub-text" style={{ color: theme.text }}>
-                  Basic Qualification and Certifcations
-                </h3>
-                <CompetitiveSites logos={competitiveSites.competitiveSites} />
+                <VideoCard
+                  src="https://proyecto-final-traffic-vision.s3.us-east-1.amazonaws.com/Prueba1.MP4"
+                  theme={theme}
+                />
+              </div>
+              <div className="heading-table-div">
+                <h1 className="heading-text" style={{ color: "#001c55" }}>
+                  Top Infractions
+                </h1>
+                <CustomTable detections={detections} />
               </div>
             </div>
           </Fade>
           <Educations theme={this.props.theme} />
-          {certifications.certifications.length > 0 ? (
-            <Certifications theme={this.props.theme} />
-          ) : null}
         </div>
         <Footer theme={this.props.theme} />
         <TopButton theme={this.props.theme} />

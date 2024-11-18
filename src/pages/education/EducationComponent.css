@@ -15,19 +15,19 @@
   flex: 1;
 }
 
-.heading-img-div {
+.heading-video-div {
+  flex: 3;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.heading-text-div {
-  text-align: center;
-}
-
-.heading-img-div > * {
-  max-width: 100%;
-  height: auto;
+.heading-table-div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .heading-text {

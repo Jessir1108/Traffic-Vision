@@ -37,6 +37,10 @@
   line-height: normal;
 }
 
+.eyes-img-div > * {
+  margin-top: 0 !important;
+}
+
 /* Media Query */
 @media (max-width: 1380px) {
   .skills-heading {

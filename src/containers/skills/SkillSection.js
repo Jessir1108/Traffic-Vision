@@ -7,6 +7,7 @@ import DataScienceImg from "./DataScienceImg";
 import FullStackImg from "./FullStackImg";
 import CloudInfraImg from "./CloudInfraImg";
 import DesignImg from "./DesignImg";
+import EyesImg from "./Eyes";
 
 function GetSkillSvg(props) {
   if (props.fileName === "DataScienceImg")
@@ -15,6 +16,7 @@ function GetSkillSvg(props) {
     return <FullStackImg theme={props.theme} />;
   else if (props.fileName === "CloudInfraImg")
     return <CloudInfraImg theme={props.theme} />;
+  else if (props.fileName === "EyesImg") return <EyesImg theme={props.theme} />;
   return <DesignImg theme={props.theme} />;
 }
 
@@ -24,14 +26,15 @@ class SkillSection extends Component {
     return (
       <div>
         {skills.data.map((skill, i) => {
+          const isEyesImg = skill.fileName === "EyesImg";
           return (
             <div key={i} className="skills-main-div">
               <Fade left duration={2000}>
-                <div className="skills-image-div">
-                  {/* <img
-                    alt="Ashutosh is Analysing Data"
-                    src={require(`../../assets/images/${skill.imagePath}`)}
-                  ></img> */}
+                <div
+                  className={`skills-image-div ${
+                    isEyesImg ? "eyes-img-div" : ""
+                  }`}
+                >
                   <GetSkillSvg fileName={skill.fileName} theme={theme} />
                 </div>
               </Fade>

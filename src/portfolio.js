@@ -65,6 +65,17 @@ const socialMediaLinks = [
 const skills = {
   data: [
     {
+      title: "Public exhibition as a means of control",
+      fileName: "EyesImg",
+      skills: [
+        "⚡ People adjust their behavior when aware they are being observed, reflecting the principles of Jeremy Bentham's panopticon.",
+        "⚡ Public exposure of bad driving behavior creates discomfort, discouraging individuals from repeating such actions in the future.",
+        "⚡ Fear of social judgment acts as a deterrent, encouraging adherence to societal norms and responsible conduct.",
+        "⚡ Highlighting bad driving practices like speeding or improper lane usage fosters safer driving habits and raises awareness of traffic regulations.",
+      ],
+      softwareSkills: [],
+    },
+    {
       title: "Computer Vision & Image Processing",
       fileName: "DataScienceImg",
       skills: [

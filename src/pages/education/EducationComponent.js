@@ -7,6 +7,7 @@ import CustomTable from "../../components/customTable/customTable";
 import VideoCard from "../../components/videoCard/VideoCard";
 import "./EducationComponent.css";
 import { Fade } from "react-reveal";
+import videoRecuperado from "../../assets/images/video_recuperado.gif";
 
 class Education extends Component {
   constructor(props) {
@@ -21,12 +22,15 @@ class Education extends Component {
         { plate: "JKL987", infractions: 2 },
         { plate: "MNO654", infractions: 1 },
       ],
+      latestInfractions: [
+        { plate: "IRV 504", speed: "53.982 km/h", type: "🚗 Speed" },
+      ],
     };
   }
 
   render() {
     const { theme } = this.props;
-    const { detections } = this.state;
+    const { detections, latestInfractions } = this.state;
 
     return (
       <div className="education-main" style={{ backgroundColor: "#edf9fe" }}>
@@ -38,16 +42,25 @@ class Education extends Component {
                 <h1 className="heading-text" style={{ color: "#001c55" }}>
                   Latest Detection
                 </h1>
-                <VideoCard
-                  src="https://proyecto-final-traffic-vision.s3.us-east-1.amazonaws.com/Prueba1.MP4"
-                  theme={theme}
+                <VideoCard src={videoRecuperado} theme={theme} />
+              </div>
+              <div className="heading-table-div">
+                <h1 className="heading-text" style={{ color: "#001c55" }}>
+                  Latest Infractions
+                </h1>
+                <CustomTable
+                  data={latestInfractions}
+                  columns={["Plate", "Speed", "Type"]}
                 />
               </div>
               <div className="heading-table-div">
                 <h1 className="heading-text" style={{ color: "#001c55" }}>
                   Top Infractions
                 </h1>
-                <CustomTable detections={detections} />
+                <CustomTable
+                  data={detections}
+                  columns={["Plate", "Infractions"]}
+                />
               </div>
             </div>
           </Fade>

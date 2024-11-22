@@ -9,6 +9,7 @@
 
 .heading-div {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .heading-div > * {
@@ -16,7 +17,7 @@
 }
 
 .heading-video-div {
-  flex: 3;
+  flex: 2;
   display: flex;
   flex-direction: column;
   align-items: center;

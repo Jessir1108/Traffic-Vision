@@ -15,7 +15,7 @@ class CustomTable extends React.Component {
   };
 
   render() {
-    const { detections } = this.props;
+    const { data, columns } = this.props;
     const { page, rowsPerPage } = this.state;
 
     return (
@@ -23,22 +23,26 @@ class CustomTable extends React.Component {
         <table className="custom-table">
           <thead>
             <tr>
-              <th>Plate</th>
-              <th># of Infractions</th>
+              {columns.map((column) => (
+                <th key={column}>{column}</th>
+              ))}
             </tr>
           </thead>
           <tbody>
-            {detections
+            {data
               .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-              .map((detection) => (
-                <tr key={detection.plate}>
-                  <td>{detection.plate}</td>
-                  <td>{detection.infractions}</td>
+              .map((row, index) => (
+                <tr key={index}>
+                  {columns.map((column) => (
+                    <td key={column}>
+                      {row[column.toLowerCase().replace(/ /g, "")]}
+                    </td>
+                  ))}
                 </tr>
               ))}
           </tbody>
         </table>
-        {detections.length > rowsPerPage && (
+        {data.length > rowsPerPage && (
           <div className="pagination">
             <button
               onClick={() => this.handleChangePage(page - 1)}
@@ -48,7 +52,7 @@ class CustomTable extends React.Component {
             </button>
             <button
               onClick={() => this.handleChangePage(page + 1)}
-              disabled={page >= Math.ceil(detections.length / rowsPerPage) - 1}
+              disabled={page >= Math.ceil(data.length / rowsPerPage) - 1}
             >
               Next
             </button>

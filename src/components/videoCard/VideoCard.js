@@ -1,12 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import "./VideoCard.css";
 
-export default function VideoCard({ src, poster }) {
+export default function VideoCard({ src }) {
+  const [error, setError] = useState(false);
+
+  const handleError = () => {
+    setError(true);
+  };
+
   return (
     <div className="video-card">
-      <video className="video-content" autoPlay loop muted poster={poster}>
-        <source src={src} type="video/mp4" />
-      </video>
+      {error ? (
+        <div className="error-message">Error loading GIF</div>
+      ) : (
+        <img
+          className="video-content"
+          src={src}
+          alt="GIF content"
+          onError={handleError}
+        />
+      )}
     </div>
   );
 }

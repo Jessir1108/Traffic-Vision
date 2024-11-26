@@ -218,14 +218,27 @@ const competitiveSites = {
 const degrees = {
   degrees: [
     {
+      title: "Can the feeling of being watched change our behavior?",
+      logo_path: "eye.png",
+      descriptions: [
+        "⚡ Awareness of being watched can motivate drivers to follow traffic rules, improving overall safety.",
+        "⚡ The knowledge that one's behavior is visible encourages responsible driving and discourages violations.",
+        "⚡ Drivers avoid risky actions like speeding or illegal lane changes due to the fear of being caught.",
+        "⚡ Awareness of monitoring fosters increased self-awareness, prompting safer, more law-abiding driving.",
+        "⚡ Regular exposure to surveillance can lead to long-term improvements in driving behavior.",
+      ],
+      eyes: true,
+    },
+    {
       title: "Plate detection",
       logo_path: "iiitk_logo.png",
       alt_name: "IIITDM Kurnool",
       descriptions: [
-        "⚡ In the developed system, the detection of vehicle license plates was carried out using a pre-trained YOLOv5 model specifically designed for license plate identification. This model accurately locates regions of interest in the images captured by cameras installed on the road. Based on the coordinates provided by YOLOv5, the specific areas corresponding to the plates are extracted, facilitating further analysis.",
-        "⚡ Once the plate region is identified, image processing techniques, such as adjustments to contrast, brightness, and sharpness, are applied to optimize detection quality. These enhancements ensure that the alphanumeric characters on the plates can be read more accurately.",
-        "⚡ Character recognition was performed using tools like EasyOCR, which converted the processed images into alphanumeric text. This text was validated against a standard pattern to ensure compliance with the format of vehicle license plates. Additionally, the model was evaluated and fine-tuned using a ground truth dataset, allowing for accurate measurement of its precision and robustness under real-world conditions.",
-        "⚡ This comprehensive approach ensures efficient and reliable performance in the detection and analysis of vehicle license plates, meeting the system's technical requirements.",
+        "⚡ Pre-trained YOLOv5 model accurately identifies and extracts license plate regions in road images.",
+        "⚡ Techniques such as contrast, brightness, and sharpness adjustments are applied to improve plate clarity.",
+        "⚡ EasyOCR converts the processed plate regions into alphanumeric text, validated against a standard plate format.",
+        "⚡ Model performance enhanced using a ground truth dataset for accurate detection in real-world scenarios.",
+        "⚡ The system meets technical requirements with efficient and robust license plate detection and analysis.",
         {
           type: "image",
           src: "car_plate.png",
@@ -239,10 +252,11 @@ const degrees = {
       logo_path: "iu_logo.png",
       alt_name: "Indiana University Bloomington",
       descriptions: [
-        "⚡ The vehicle speed estimation system integrates advanced computer vision techniques and mathematical modeling to determine vehicle speeds based on video analysis. The process begins with the detection of vehicles and license plates using pre-trained YOLO models. Vehicles are identified using yolov8n.pt, while license plates are detected using a dedicated license plate detector model.",
-        "⚡ Once the vehicles and plates are detected, their positions and dimensions are tracked using the SORT (Simple Online and Realtime Tracking) algorithm. This ensures accurate tracking of individual vehicles across video frames, even in complex traffic scenarios. The dimensions of the license plate in pixels, combined with its vertical position in the frame, are used to estimate the distance from the camera using a pre-calculated distance vector.",
-        "⚡ The system calculates the vehicle's speed by measuring the apparent size of the license plate in subsequent frames, leveraging the relationship between the plate's size, its distance to the camera, and the frame rate of the video. This estimation, performed in real-time, is converted into kilometers per hour (km/h). The average speed of each vehicle is then displayed on the video frame alongside bounding boxes that indicate their position, providing a clear visualization of the traffic data.",
-        "⚡ This method ensures precise and efficient speed estimation, which is crucial for applications in traffic monitoring and enforcement. The system's ability to process data dynamically allows it to adapt to varying conditions, making it robust and reliable for real-world scenarios.",
+        "⚡Vehicles detected with YOLO and plates with a dedicated license plate detector.",
+        "⚡ SORT algorithm ensures accurate tracking of vehicle positions across frames, even in complex scenarios.",
+        "⚡ Calculates vehicle speed using changes in the plate's apparent size across frames, combined with distance and frame rate data.",
+        "⚡ Speeds displayed in real-time on video frames with bounding boxes indicating vehicle positions.",
+        "⚡ System robustly handles varying traffic and environmental conditions, ensuring precise and efficient speed monitoring.",
         {
           type: "image",
           src: "speed_estimation.jpg",
@@ -255,9 +269,10 @@ const degrees = {
       logo_path: "image.png",
       alt_name: "Indiana University Bloomington",
       descriptions: [
-        "⚡ The lane detection and tracking system leverages advanced computer vision techniques to ensure precise and robust identification of road lanes. A central component of the system is the implementation of a perspective transformation, which converts the standard camera view into a bird's eye view. This transformation simplifies the geometric representation of the road, making lane boundaries more discernible and facilitating accurate lane tracking even in dynamic traffic conditions.",
-        "⚡ The system also integrates a comprehensive pipeline of image pre-processing steps, including HSV filtering for color segmentation, grayscale conversion, Gaussian blur to minimize noise, and Canny edge detection to highlight lane boundaries. Additionally, region-of-interest (ROI) masking ensures that only the relevant road segments are analyzed, improving efficiency and accuracy. These techniques, combined with histogram-based lane line initialization and sliding window methods, allow the system to detect and track left, middle, and right lanes with high precision.",
-        "⚡ To ensure adaptability to real-world challenges, the system was validated in scenarios where slight camera movements occurred due to environmental factors or mechanical vibrations. Even under these conditions, the lane detection algorithm maintained robust performance, accurately identifying lanes and dynamically adapting to variations in road curvature and lighting. This approach ensures a reliable and efficient solution for lane detection in real-world driving environments.",
+        "⚡ Converts the camera's standard view into a bird's eye perspective, simplifying road geometry and enhancing lane boundary visibility.",
+        "⚡ Utilizes HSV filtering, grayscale conversion, Gaussian blur, and Canny edge detection to highlight lane boundaries effectively.",
+        "⚡ Ensures only relevant road segments are analyzed, optimizing accuracy and computational efficiency.",
+        "⚡ Maintains performance despite camera movements, road curvature, and lighting variations, ensuring reliable real-world lane detection.",
         {
           type: "image",
           src: "lane_detection.png",

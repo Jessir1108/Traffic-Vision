@@ -7,30 +7,104 @@ import CustomTable from "../../components/customTable/customTable";
 import VideoCard from "../../components/videoCard/VideoCard";
 import "./EducationComponent.css";
 import { Fade } from "react-reveal";
-import videoRecuperado from "../../assets/images/video_recuperado.gif";
+
+function importAll(r) {
+  return r.keys().map(r);
+}
+
+const videos = importAll(
+  require.context("../../assets/images/gifs", false, /\.gif$/)
+);
+
+const videoInfo = {
+  0: {
+    plate: "IRV504",
+    speed: "53.98 KM/H",
+    type: "❌ Wrong lane for this speed",
+  },
+  1: {
+    plate: "GJN313",
+    speed: "52.14 KM/H",
+    type: "❌ Wrong lane for this speed",
+  },
+  2: {
+    plate: "WPX489",
+    speed: "38.12 KM/H",
+    type: "🐢 Very slow for this lane",
+  },
+};
 
 class Education extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      detections: [
-        { plate: "ABC123", infractions: 10 },
-        { plate: "XYZ789", infractions: 8 },
-        { plate: "LMN456", infractions: 7 },
-        { plate: "DEF321", infractions: 5 },
-        { plate: "GHI654", infractions: 3 },
-        { plate: "JKL987", infractions: 2 },
-        { plate: "MNO654", infractions: 1 },
-      ],
-      latestInfractions: [
-        { plate: "IRV 504", speed: "53.982 km/h", type: "🚗 Speed" },
-      ],
+      detections: [],
+      latestInfractions: [],
+      currentVideoIndex: 0,
+      intervalId: null,
     };
+  }
+
+  componentDidMount() {
+    this.syncVideoState();
+    this.setVideoInterval();
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.state.intervalId);
+  }
+
+  syncVideoState() {
+    const savedVideoIndex = localStorage.getItem("currentVideoIndex");
+    if (savedVideoIndex) {
+      this.setState({ currentVideoIndex: parseInt(savedVideoIndex, 10) });
+    }
+  }
+
+  setVideoInterval() {
+    const intervalId = setInterval(() => {
+      this.toggleVideo();
+    }, 40000);
+    this.setState({ intervalId });
+  }
+
+  toggleVideo() {
+    const nextVideoIndex = (this.state.currentVideoIndex + 1) % videos.length;
+    console.log(`Changing to video index: ${nextVideoIndex}`);
+    const info = videoInfo[nextVideoIndex] || {
+      plate: "Unknown",
+      speed: "0 KM/H",
+      type: "Unknown",
+    };
+
+    this.setState((prevState) => {
+      const existingDetectionIndex = prevState.detections.findIndex(
+        (d) => d.plate === info.plate
+      );
+      let updatedDetections = [...prevState.detections];
+
+      if (existingDetectionIndex !== -1) {
+        updatedDetections[existingDetectionIndex].infractions += 1;
+      } else {
+        updatedDetections.push({ plate: info.plate, infractions: 1 });
+      }
+
+      return {
+        currentVideoIndex: nextVideoIndex,
+        detections: updatedDetections,
+        latestInfractions: [
+          ...prevState.latestInfractions,
+          { plate: info.plate, speed: info.speed, type: info.type },
+        ],
+      };
+    });
+
+    localStorage.setItem("currentVideoIndex", nextVideoIndex);
   }
 
   render() {
     const { theme } = this.props;
-    const { detections, latestInfractions } = this.state;
+    const { detections, latestInfractions, currentVideoIndex } = this.state;
 
     return (
       <div className="education-main" style={{ backgroundColor: "#edf9fe" }}>
@@ -42,7 +116,7 @@ class Education extends Component {
                 <h1 className="heading-text" style={{ color: "#001c55" }}>
                   Latest Detection
                 </h1>
-                <VideoCard src={videoRecuperado} theme={theme} />
+                <VideoCard src={videos[currentVideoIndex]} theme={theme} />
               </div>
               <div className="heading-table-div">
                 <h1 className="heading-text" style={{ color: "#001c55" }}>
